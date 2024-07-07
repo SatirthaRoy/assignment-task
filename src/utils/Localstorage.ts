@@ -4,5 +4,10 @@ export const saveData = (obj: object) => {
 }
 
 export const getData = () => {
-  return JSON.parse(localStorage.getItem('userData')) || null;
+  const value = localStorage.getItem('userData');
+  if(value === null) {
+    return null
+  } else {
+    return JSON.parse(value)
+  }
 }
